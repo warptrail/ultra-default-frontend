@@ -3,15 +3,16 @@ import { Link as LinkRouter } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 
 export const Nav = styled.nav`
-  background: #000;
+  color: #fff;
+  background: ${({ scrollNav }) => (scrollNav ? '#000' : 'transparent')};
   height: 80px;
-  margin-top: -80px;
+  margin-top: ${({ isHomePage }) => (isHomePage ? '-80px' : '0px')};
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: rem;
+  font-size: 1.3rem;
   position: sticky;
-  top: 0;
+  top: 0rem;
   z-index: 10;
 
   @media screen and (max-width: 960px) {
@@ -37,8 +38,14 @@ export const NavLogo = styled(LinkRouter)`
   display: flex;
   align-items: center;
   margin-left: 24px;
+  margin-right: 12px;
   font-weight: bold;
   text-decoration: none;
+`;
+
+export const NavLogoText = styled.span`
+  color: #fff;
+  margin-right: 12px;
 `;
 
 export const MobileIcon = styled.div`

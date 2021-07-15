@@ -10,9 +10,9 @@ import {
   SideBtnWrap,
 } from './SidebarElements';
 
-const Sidebar = ({ isOpen, toggle }) => {
+const Sidebar = ({ isNavOpen, toggle }) => {
   return (
-    <SidebarContainer isOpen={isOpen} onClick={toggle}>
+    <SidebarContainer isNavOpen={isNavOpen} onClick={toggle}>
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
