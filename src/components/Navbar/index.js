@@ -9,19 +9,16 @@ import {
   NavLogo,
   NavLogoText,
   MobileIcon,
-  NavMenu,
-  NavItem,
-  NavLinks,
-  NavBtn,
-  NavBtnLink,
 } from './NavbarElements';
+
+import DynamicMenu from './DynamicMenu';
 
 const Navbar = ({ toggle }) => {
   const currentURL = useLocation();
-
+  console.log(currentURL);
   const [scrollNav, setScrollNav] = useState(false);
 
-  // when past a particular point, trigger
+  // when past a particular point, trigger the transparent nav background
   const changeNav = () => {
     if (window.scrollY > 80) {
       setScrollNav(true);
@@ -37,6 +34,7 @@ const Navbar = ({ toggle }) => {
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
   }, []);
+
   return (
     <>
       <Nav scrollNav={scrollNav} isHomePage={currentURL.pathname === '/'}>
@@ -45,33 +43,11 @@ const Navbar = ({ toggle }) => {
             <NavLogoText>warptrail</NavLogoText>
             <FaRoad />
           </NavLogo>
+          <DynamicMenu urlPathname={currentURL.pathname} />
 
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
-          <NavMenu>
-            <NavItem>
-              <NavLinks
-                to="about"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-              >
-                About
-              </NavLinks>
-            </NavItem>
-            <NavItem className="test">
-              <NavLinks to="discover">Discover</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="services">Services</NavLinks>
-            </NavItem>
-            <NavBtn>
-              <NavLinks to="signup">Sign Up</NavLinks>
-            </NavBtn>
-            <NavBtnLink to="/signin">Sign In</NavBtnLink>
-          </NavMenu>
         </NavbarContainer>
       </Nav>
     </>

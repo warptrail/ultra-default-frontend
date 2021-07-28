@@ -1,4 +1,6 @@
 import React from 'react';
+import { animateScroll as scroll } from 'react-scroll';
+
 import {
   FaFacebook,
   FaInstagram,
@@ -23,6 +25,10 @@ import {
 } from './FooterElements';
 
 const Footer = () => {
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
       <FooterContainer>
@@ -67,7 +73,9 @@ const Footer = () => {
           </FooterLinksContainer>
           <SocialMedia>
             <SocialMediaWrap>
-              <SocialLogo to="/">Warptrail</SocialLogo>
+              <SocialLogo to="/" onClick={toggleHome}>
+                Warptrail
+              </SocialLogo>
               <WebsiteRights>
                 warptrail © {new Date().getFullYear()} All rights reserved.
               </WebsiteRights>

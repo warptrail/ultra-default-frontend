@@ -39,7 +39,7 @@ export const homeObjTwo = {
 };
 
 export const homeObjThree = {
-  id: 'services',
+  id: 'discover-continued',
   lightBg: false,
   lightText: true,
   lightTextDesc: true,

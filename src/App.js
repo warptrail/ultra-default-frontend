@@ -6,8 +6,11 @@ import Sidebar from './components/Sidebar';
 
 import Home from './routes/';
 import SignInPage from './routes/SignInPage';
+import SignUpPage from './routes/SignUpPage';
 
 function App() {
+  // const { pathname, hash } = useLocation();
+
   // state for the main menu being open in mobile
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -25,6 +28,7 @@ function App() {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/signin" component={SignInPage} />
+        <Route path="/signup" component={SignUpPage} />
       </Switch>
     </Router>
   );

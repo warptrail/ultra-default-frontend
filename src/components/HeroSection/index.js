@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import {
   HeroContainer,
   HeroBg,
-  VideoBg,
+  PhotoBg,
+  BackgroundOverlay,
   HeroContent,
   HeroH1,
   HeroP,
@@ -11,7 +12,7 @@ import {
   ArrowRight,
 } from './HeroElements';
 import { Button } from '../ButtonElement';
-import Video from '../../videos/video.mp4';
+import backGround from '../../images/new-york-background.jpg';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -21,15 +22,17 @@ const HeroSection = () => {
   };
 
   return (
-    <HeroContainer>
+    <HeroContainer id="home">
       <HeroBg>
-        <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
+        {/* <VideoBg autoPlay loop muted src={Video} type="video/mp4" /> */}
+        <BackgroundOverlay />
+        <PhotoBg src={backGround} />
       </HeroBg>
       <HeroContent>
-        <HeroH1>Virtual Data Made Easy</HeroH1>
+        <HeroH1>New York TImes Best Sellers</HeroH1>
         <HeroP>
-          Sign up for a new account today and receive 322 Gigabytes of
-          recompiled data today.
+          This App will search and sort through a read-only json database to
+          demonstrate how a client communicates with an API.
         </HeroP>
         <HeroBtnWrapper>
           <Button

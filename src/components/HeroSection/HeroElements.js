@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaArrowRight, FaArrowUp } from 'react-icons/fa';
+import { FaArrowRight, FaArrowDown } from 'react-icons/fa';
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
@@ -47,6 +47,26 @@ export const VideoBg = styled.video`
   background: #232a34;
 `;
 
+export const PhotoBg = styled.img`
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background: #232a34;
+`;
+
+export const BackgroundOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 800px;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  opacity: 0.6;
+  overflow: hidden;
+`;
+
 export const HeroContent = styled.div`
   z-index: 3;
   max-width: 1200px;
@@ -76,6 +96,7 @@ export const HeroP = styled.p`
   font-size: 24px;
   text-align: center;
   max-width: 600px;
+  margin: 10px auto;
 
   @media screen and (max-width: 768px) {
     font-size: 24px;
@@ -93,7 +114,7 @@ export const HeroBtnWrapper = styled.div`
   align-items: center;
 `;
 
-export const ArrowUp = styled(FaArrowUp)`
+export const ArrowUp = styled(FaArrowDown)`
   margin-left: 8px;
   font-size: 20px;
 `;

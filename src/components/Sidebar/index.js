@@ -1,4 +1,6 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+
 import {
   SidebarContainer,
   Icon,
@@ -8,32 +10,22 @@ import {
   SidebarLink,
   SidebarRoute,
   SideBtnWrap,
+  SidebarLinkRouter,
 } from './SidebarElements';
+import DynamicMenu from './DynamicMenu';
 
 const Sidebar = ({ isNavOpen, toggle }) => {
+  const currentURL = useLocation();
   return (
     <SidebarContainer isNavOpen={isNavOpen} onClick={toggle}>
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
       <SidebarWrapper>
-        <SidebarMenu>
-          <SidebarLink to="about" onClick={toggle}>
-            About
-          </SidebarLink>
-          <SidebarLink to="discover" onClick={toggle}>
-            Discover
-          </SidebarLink>
-          <SidebarLink to="services" onClick={toggle}>
-            Services
-          </SidebarLink>
-          <SidebarLink to="signup" onClick={toggle}>
-            Signup
-          </SidebarLink>
-        </SidebarMenu>
-        <SideBtnWrap>
-          <SidebarRoute to="/signin">Sign In</SidebarRoute>
-        </SideBtnWrap>
+        <DynamicMenu
+          toggle={toggle}
+          urlPathname={currentURL.pathname}
+        ></DynamicMenu>
       </SidebarWrapper>
     </SidebarContainer>
   );

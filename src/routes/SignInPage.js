@@ -1,10 +1,12 @@
 import React from 'react';
-
+import UserAuthenticationForm from '../components/UserAuthenticationForm';
+import ScrollToTop from '../components/ScrollToTop';
 const SignInPage = () => {
   return (
-    <div>
-      <h1>SIgn In Page</h1>
-    </div>
+    <>
+      <ScrollToTop />
+      <UserAuthenticationForm formType="signIn" />
+    </>
   );
 };
 

@@ -16,7 +16,7 @@ export const Nav = styled.nav`
   z-index: 10;
 
   @media screen and (max-width: 960px) {
-    transition: 0.8s all ease;
+    transition: ${({ isHomePage }) => (isHomePage ? '0.8s all ease;' : 'none')};
   }
 `;
 
@@ -75,6 +75,10 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
   height: 80px;
+  background-color: ${({ darkBackground }) =>
+    darkBackground ? '#010101' : 'transparent'};
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 `;
 
 export const NavLinks = styled(LinkScroll)`
@@ -91,6 +95,22 @@ export const NavLinks = styled(LinkScroll)`
   }
 `;
 
+export const NavLinkBackToHome = styled(LinkRouter)`
+  color: #fff;
+  font-size: 80%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 0.8rem;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background-color: #010101;
+  }
+`;
+
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
@@ -98,6 +118,17 @@ export const NavBtn = styled.nav`
   @media screen and (max-width: 768px) {
     display: none;
   }
+`;
+
+export const NavSignupLink = styled(LinkRouter)`
+  color: #31ec68;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
 `;
 
 export const NavBtnLink = styled(LinkRouter)`
