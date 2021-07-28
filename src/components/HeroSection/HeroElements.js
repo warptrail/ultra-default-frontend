@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FaArrowRight, FaArrowDown } from 'react-icons/fa';
+import backgroundImage from '../../images/neon-background.png';
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
@@ -30,6 +31,8 @@ export const HeroContainer = styled.div`
 
 export const HeroBg = styled.div`
   position: absolute;
+  background-image: url(${backgroundImage});
+  background-attachment: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -48,11 +51,13 @@ export const VideoBg = styled.video`
 `;
 
 export const PhotoBg = styled.img`
+  position: absolute;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   background: #232a34;
+  overflow: hidden;
 `;
 
 export const BackgroundOverlay = styled.div`

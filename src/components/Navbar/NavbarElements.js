@@ -107,7 +107,7 @@ export const NavLinkBackToHome = styled(LinkRouter)`
   transition: all 0.5s ease-in-out;
 
   &:hover {
-    background-color: #010101;
+    border-bottom: 3px solid #fff;
   }
 `;
 

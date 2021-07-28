@@ -12,7 +12,7 @@ import {
   ArrowRight,
 } from './HeroElements';
 import { Button } from '../ButtonElement';
-import backGround from '../../images/new-york-background.jpg';
+import backgroundImage from '../../images/neon-background.png';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -26,13 +26,12 @@ const HeroSection = () => {
       <HeroBg>
         {/* <VideoBg autoPlay loop muted src={Video} type="video/mp4" /> */}
         <BackgroundOverlay />
-        <PhotoBg src={backGround} />
+        {/* <PhotoBg src={backgroundImage} /> */}
       </HeroBg>
       <HeroContent>
-        <HeroH1>New York TImes Best Sellers</HeroH1>
+        <HeroH1>Ultra Default</HeroH1>
         <HeroP>
-          This App will search and sort through a read-only json database to
-          demonstrate how a client communicates with an API.
+          This is the default Warptrail web page and application template.
         </HeroP>
         <HeroBtnWrapper>
           <Button

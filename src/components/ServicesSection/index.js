@@ -15,24 +15,22 @@ import {
 const ServicesSection = () => {
   return (
     <ServicesContainer id="services">
-      <ServicesH1>Our Services</ServicesH1>
+      <ServicesH1>Warped Services</ServicesH1>
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1} />
-          <ServicesH2>Reduce Expenses</ServicesH2>
-          <ServicesP>
-            We help reduce your fees and increase our revenue
-          </ServicesP>
+          <ServicesH2>Widgets</ServicesH2>
+          <ServicesP>Widgets are useful for tasks</ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2} />
-          <ServicesH2>Reduce Suffering</ServicesH2>
-          <ServicesP>wow such services to our needs</ServicesP>
+          <ServicesH2>Trinkets</ServicesH2>
+          <ServicesP>Trinkets increase production value</ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3} />
-          <ServicesH2>Increase Expenses</ServicesH2>
-          <ServicesP>We will commit tax fraud</ServicesP>
+          <ServicesH2>Relics</ServicesH2>
+          <ServicesP>Relics will boost absorption rates</ServicesP>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>
