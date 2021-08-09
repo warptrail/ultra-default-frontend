@@ -1,9 +1,13 @@
-import image1 from '../../images/undraw-img-1.svg';
-import image2 from '../../images/undraw-img-2.svg';
-import image3 from '../../images/undraw-img-3.svg';
+import image1 from './images/undraw-img-1.svg';
+import image2 from './images/undraw-img-2.svg';
+import image3 from './images/undraw-img-3.svg';
+import Icon1 from './images/undraw-img-7.svg';
+import Icon2 from './images/undraw-img-6.svg';
+import Icon3 from './images/undraw-img-5.svg';
 
 export const homeObjOne = {
   id: 'about',
+  menuName: 'About',
   lightBg: false,
   lightText: true,
   lightTextDesc: true,
@@ -22,6 +26,7 @@ export const homeObjOne = {
 
 export const homeObjTwo = {
   id: 'discover',
+  menuName: 'Discover',
   lightBg: true,
   lightText: false,
   lightTextDesc: true,
@@ -37,6 +42,27 @@ export const homeObjTwo = {
   primary: false,
   darkText: true,
 };
+
+export const servicesData = [
+  {
+    id: 'service',
+    name: 'Widgets',
+    description: 'Widgets are useful for tasks',
+    icon: Icon1,
+  },
+  {
+    id: 'service',
+    name: 'Trinkets',
+    description: 'Trinkets increase production value',
+    icon: Icon2,
+  },
+  {
+    id: 'service',
+    name: 'Relics',
+    description: 'Relics will boost absorption rates',
+    icon: Icon3,
+  },
+];
 
 export const homeObjThree = {
   id: 'discover-continued',
@@ -55,3 +81,41 @@ export const homeObjThree = {
   primary: true,
   darkText: false,
 };
+
+export const mainMenuData = [
+  {
+    id: 'about',
+    name: 'About',
+    toScroll: 'about',
+    toRoute: '/#about',
+    linkStyle: 'home-scroll',
+  },
+  {
+    id: 'discover',
+    name: 'Discover',
+    toScroll: 'discover',
+    toRoute: '/#discover',
+    linkStyle: 'home-scroll',
+  },
+  {
+    id: 'services',
+    name: 'Services',
+    toScroll: 'services',
+    toRoute: '/#services',
+    linkStyle: 'home-scroll',
+  },
+  {
+    id: 'signup',
+    name: 'Sign Up',
+    toScroll: 'signup',
+    toRoute: '/signup',
+    linkStyle: 'green-router',
+  },
+  {
+    id: 'login',
+    name: 'Log In',
+    toScroll: 'login',
+    toRoute: '/login',
+    linkStyle: 'btn-green-router',
+  },
+];

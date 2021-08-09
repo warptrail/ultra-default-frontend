@@ -4,11 +4,7 @@ import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
 import ServicesSection from '../components/ServicesSection';
 import Footer from '../components/Footer';
-import {
-  homeObjOne,
-  homeObjTwo,
-  homeObjThree,
-} from '../components/InfoSection/Data';
+import { homeObjOne, homeObjTwo } from '../Data';
 
 const Home = () => {
   // Code to scroll to specific id when changing route

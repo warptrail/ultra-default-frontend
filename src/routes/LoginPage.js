@@ -1,13 +1,13 @@
 import React from 'react';
 import UserAuthenticationForm from '../components/UserAuthenticationForm';
 import ScrollToTop from '../components/ScrollToTop';
-const SignInPage = () => {
+const LoginPage = () => {
   return (
     <>
       <ScrollToTop />
-      <UserAuthenticationForm formType="signIn" />
+      <UserAuthenticationForm formType="login" />
     </>
   );
 };
 
-export default SignInPage;
+export default LoginPage;

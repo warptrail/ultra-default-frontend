@@ -6,13 +6,8 @@ import {
   Icon,
   CloseIcon,
   SidebarWrapper,
-  SidebarMenu,
-  SidebarLink,
-  SidebarRoute,
-  SideBtnWrap,
-  SidebarLinkRouter,
 } from './SidebarElements';
-import DynamicMenu from './DynamicMenu';
+import DynamicMenu from '../DynamicMenu';
 
 const Sidebar = ({ isNavOpen, toggle }) => {
   const currentURL = useLocation();
@@ -25,6 +20,7 @@ const Sidebar = ({ isNavOpen, toggle }) => {
         <DynamicMenu
           toggle={toggle}
           urlPathname={currentURL.pathname}
+          mobileView={true}
         ></DynamicMenu>
       </SidebarWrapper>
     </SidebarContainer>

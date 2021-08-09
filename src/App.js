@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 
 import Home from './routes/';
-import SignInPage from './routes/SignInPage';
+import LoginPage from './routes/LoginPage';
 import SignUpPage from './routes/SignUpPage';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
 
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/signin" component={SignInPage} />
+        <Route path="/login" component={LoginPage} />
         <Route path="/signup" component={SignUpPage} />
       </Switch>
     </Router>

@@ -11,7 +11,7 @@ import {
   MobileIcon,
 } from './NavbarElements';
 
-import DynamicMenu from './DynamicMenu';
+import DynamicMenu from '../DynamicMenu';
 
 const Navbar = ({ toggle }) => {
   const currentURL = useLocation();
@@ -43,8 +43,7 @@ const Navbar = ({ toggle }) => {
             <NavLogoText>warptrail</NavLogoText>
             <FaRoad />
           </NavLogo>
-          <DynamicMenu urlPathname={currentURL.pathname} />
-
+          <DynamicMenu urlPathname={currentURL.pathname} mobileView={false} />
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>

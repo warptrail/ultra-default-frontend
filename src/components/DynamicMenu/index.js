@@ -1,0 +1,212 @@
+import React, { useState, useEffect } from 'react';
+import { animateScroll as scroll } from 'react-scroll';
+
+import { mainMenuData } from '../../Data';
+
+import {
+  NavMenu,
+  NavItem,
+  DesktopLinkScroll,
+  DesktopLinkRouter,
+  NavBtn,
+  NavBtnLinkRouter,
+  NavLinkRouteToHome,
+  SidebarMenu,
+  SidebarLinkScroll,
+  SidebarLinkRouter,
+  SideBtnWrap,
+  SidebarRouteBtn,
+} from './DynamicMenuElements';
+
+const DynamicMenu = ({ urlPathname, mobileView, toggle }) => {
+  const [pathnameState, setPathnameState] = useState(urlPathname);
+
+  useEffect(() => {
+    setPathnameState(urlPathname);
+  }, [urlPathname]);
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
+  // ^ Desktop Menu layout components
+
+  const renderDesktopHomePageMenu = () => {
+    const MainMenuComponents = mainMenuData.map((item) => {
+      let MenuItemComponent;
+      switch (item.linkStyle) {
+        case 'home-scroll':
+          MenuItemComponent = (
+            <NavItem key={`key-${item.id}`}>
+              <DesktopLinkScroll
+                to={item.toScroll}
+                smooth={true}
+                duration={500}
+                activeClass="active"
+                spy={pathnameState === '/' ? true : false}
+                exact="true"
+                offset={-80}
+              >
+                {item.name}
+              </DesktopLinkScroll>
+            </NavItem>
+          );
+          break;
+        case 'green-router':
+          MenuItemComponent = (
+            <NavItem key={`key-${item.id}`}>
+              <DesktopLinkRouter onClick={toggleHome} to={item.toRoute}>
+                {item.name}
+              </DesktopLinkRouter>
+            </NavItem>
+          );
+          break;
+        case 'btn-green-router':
+          MenuItemComponent = (
+            <NavBtn key={`key-${item.id}`}>
+              <NavBtnLinkRouter onClick={toggleHome} to={item.toRoute}>
+                {item.name}
+              </NavBtnLinkRouter>
+            </NavBtn>
+          );
+          break;
+        default:
+          MenuItemComponent = <NavItem>Broken Link</NavItem>;
+      }
+      return MenuItemComponent;
+    });
+    return <NavMenu>{MainMenuComponents}</NavMenu>;
+  };
+
+  const renderDesktopLoginSignupPageMenu = (authType) => {
+    // * Remove the authType option to rearrange the menu data
+    const filterMenu = mainMenuData.filter((item) => item.toRoute !== authType);
+
+    // * Move the last item of the menu to the first item
+    const poppedMenuItem = filterMenu.pop();
+    filterMenu.unshift(poppedMenuItem);
+
+    const MainMenuComponents = filterMenu.map((item) => {
+      let menuItemComponent;
+      if (item.id === 'login' || item.id === 'signup') {
+        menuItemComponent = (
+          <NavItem key={`key-${item.id}`} darkBackground={true}>
+            <DesktopLinkRouter to={item.toRoute}>{item.name}</DesktopLinkRouter>
+          </NavItem>
+        );
+      } else {
+        menuItemComponent = (
+          <NavItem key={`key-${item.id}`}>
+            <NavLinkRouteToHome to={item.toRoute}>
+              {item.name}
+            </NavLinkRouteToHome>
+          </NavItem>
+        );
+      }
+      return menuItemComponent;
+    }); // end map
+    return <NavMenu>{MainMenuComponents}</NavMenu>;
+  };
+
+  // ^ Mobile Menu layout components
+
+  const renderMobileHomePageMenu = () => {
+    const MainMenuComponents = mainMenuData.map((item) => {
+      let MenuItemComponent;
+
+      switch (item.linkStyle) {
+        case 'home-scroll':
+          MenuItemComponent = (
+            <SidebarLinkScroll
+              key={`key-${item.id}`}
+              to={item.toScroll}
+              onClick={toggle}
+              exact="true"
+              offset={-80}
+            >
+              {item.name}
+            </SidebarLinkScroll>
+          );
+          break;
+        case 'green-router':
+          MenuItemComponent = (
+            <SidebarLinkRouter
+              key={`key-${item.id}`}
+              to={item.toRoute}
+              onClick={toggle}
+            >
+              {item.name}
+            </SidebarLinkRouter>
+          );
+          break;
+        case 'btn-green-router':
+          MenuItemComponent = (
+            <SideBtnWrap key={`key-${item.id}`}>
+              <SidebarRouteBtn to={item.toRoute}>{item.name}</SidebarRouteBtn>
+            </SideBtnWrap>
+          );
+          break;
+        default:
+          MenuItemComponent = '';
+          break;
+      }
+      return MenuItemComponent;
+    });
+    return <SidebarMenu>{MainMenuComponents}</SidebarMenu>;
+  };
+
+  const renderMobileLoginSignupPageMenu = (authType) => {
+    const filterMenu = mainMenuData.filter((item) => item.toRoute !== authType);
+
+    const MainMenuComponents = filterMenu.map((item) => {
+      let menuItemComponent;
+      if (item.id === 'login' || item.id === 'signup') {
+        menuItemComponent = (
+          <SideBtnWrap key={`key-${item.id}`}>
+            <SidebarRouteBtn to={item.toRoute}>{item.name}</SidebarRouteBtn>
+          </SideBtnWrap>
+        );
+      } else {
+        menuItemComponent = (
+          <SidebarLinkRouter
+            to={item.toRoute}
+            onClick={toggle}
+            key={`key-${item.id}`}
+          >
+            {item.name}
+          </SidebarLinkRouter>
+        );
+      }
+
+      return menuItemComponent;
+    });
+
+    return <SidebarMenu>{MainMenuComponents}</SidebarMenu>;
+  };
+
+  const renderMobileMenu = () => {
+    if (pathnameState === '/') {
+      return renderMobileHomePageMenu();
+    } else if (pathnameState === '/signup' || pathnameState === '/login') {
+      return renderMobileLoginSignupPageMenu(pathnameState);
+    }
+  };
+
+  const renderDesktopMenu = () => {
+    if (pathnameState === '/') {
+      return renderDesktopHomePageMenu();
+    } else if (pathnameState === '/signup' || pathnameState === '/login') {
+      return renderDesktopLoginSignupPageMenu(pathnameState);
+    }
+  };
+
+  console.log('the urls pathname is ' + pathnameState);
+
+  return <>{mobileView ? renderMobileMenu() : renderDesktopMenu()}</>;
+};
+
+export default DynamicMenu;
+
+// Separation of Church and State is preferred.
+// In an age where money is God and the Church is Wall Street,
+// Separation of Corporation and State is an idea worth exploring

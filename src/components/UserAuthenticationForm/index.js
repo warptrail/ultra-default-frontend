@@ -56,11 +56,11 @@ const UserAuthenticationForm = ({ formType }) => {
   };
 
   // Render a sign in form function
-  const renderSignInForm = () => {
+  const renderLoginForm = () => {
     return (
       <Container>
         <FormWrap>
-          <Form id="signInForm" onSubmit={handleSubmit}>
+          <Form id="loginForm" onSubmit={handleSubmit}>
             <ReturnHome />
             <FormH1>Sign in to your account</FormH1>
             <Text red={true}>Feature Disabled</Text>
@@ -105,8 +105,8 @@ const UserAuthenticationForm = ({ formType }) => {
     );
   };
 
-  if (formType === 'signIn') {
-    return renderSignInForm();
+  if (formType === 'login') {
+    return renderLoginForm();
   } else {
     return renderSignUpForm();
   }

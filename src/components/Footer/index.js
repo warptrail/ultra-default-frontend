@@ -37,37 +37,37 @@ const Footer = () => {
             <FooterLinksWrapper>
               <FooterLinkItems>
                 <FooterLinkTitle>About Us</FooterLinkTitle>
-                <FooterLink to="/signin">How it works</FooterLink>
-                <FooterLink to="/signin">Testimonials</FooterLink>
-                <FooterLink to="/signin">Careers</FooterLink>
-                <FooterLink to="/signin">Investors</FooterLink>
-                <FooterLink to="/signin">Terms of Service</FooterLink>
+                <FooterLink to="/login">How it works</FooterLink>
+                <FooterLink to="/login">Testimonials</FooterLink>
+                <FooterLink to="/login">Careers</FooterLink>
+                <FooterLink to="/login">Investors</FooterLink>
+                <FooterLink to="/login">Terms of Service</FooterLink>
               </FooterLinkItems>
               <FooterLinkItems>
                 <FooterLinkTitle>About Us</FooterLinkTitle>
-                <FooterLink to="/signin">How it works</FooterLink>
-                <FooterLink to="/signin">Testimonials</FooterLink>
-                <FooterLink to="/signin">Careers</FooterLink>
-                <FooterLink to="/signin">Investors</FooterLink>
-                <FooterLink to="/signin">Terms of Service</FooterLink>
+                <FooterLink to="/login">How it works</FooterLink>
+                <FooterLink to="/login">Testimonials</FooterLink>
+                <FooterLink to="/login">Careers</FooterLink>
+                <FooterLink to="/login">Investors</FooterLink>
+                <FooterLink to="/login">Terms of Service</FooterLink>
               </FooterLinkItems>
             </FooterLinksWrapper>
             <FooterLinksWrapper>
               <FooterLinkItems>
                 <FooterLinkTitle>About Us</FooterLinkTitle>
-                <FooterLink to="/signin">How it works</FooterLink>
-                <FooterLink to="/signin">Testimonials</FooterLink>
-                <FooterLink to="/signin">Careers</FooterLink>
-                <FooterLink to="/signin">Investors</FooterLink>
-                <FooterLink to="/signin">Terms of Service</FooterLink>
+                <FooterLink to="/login">How it works</FooterLink>
+                <FooterLink to="/login">Testimonials</FooterLink>
+                <FooterLink to="/login">Careers</FooterLink>
+                <FooterLink to="/login">Investors</FooterLink>
+                <FooterLink to="/login">Terms of Service</FooterLink>
               </FooterLinkItems>
               <FooterLinkItems>
                 <FooterLinkTitle>About Us</FooterLinkTitle>
-                <FooterLink to="/signin">How it works</FooterLink>
-                <FooterLink to="/signin">Testimonials</FooterLink>
-                <FooterLink to="/signin">Careers</FooterLink>
-                <FooterLink to="/signin">Investors</FooterLink>
-                <FooterLink to="/signin">Terms of Service</FooterLink>
+                <FooterLink to="/login">How it works</FooterLink>
+                <FooterLink to="/login">Testimonials</FooterLink>
+                <FooterLink to="/login">Careers</FooterLink>
+                <FooterLink to="/login">Investors</FooterLink>
+                <FooterLink to="/login">Terms of Service</FooterLink>
               </FooterLinkItems>
             </FooterLinksWrapper>
           </FooterLinksContainer>
