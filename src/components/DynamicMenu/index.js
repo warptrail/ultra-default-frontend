@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
-import { mainMenuData } from '../../Data';
+import { mainMenuData, appMenuData } from '../../Data';
 
 import {
   NavMenu,
@@ -159,15 +159,15 @@ const DynamicMenu = ({ urlPathname, mobileView, toggle }) => {
     const filterMenu = mainMenuData.filter((item) => item.toRoute !== authType);
 
     const MainMenuComponents = filterMenu.map((item) => {
-      let menuItemComponent;
+      let MenuItemComponent;
       if (item.id === 'login' || item.id === 'signup') {
-        menuItemComponent = (
+        MenuItemComponent = (
           <SideBtnWrap key={`key-${item.id}`}>
             <SidebarRouteBtn to={item.toRoute}>{item.name}</SidebarRouteBtn>
           </SideBtnWrap>
         );
       } else {
-        menuItemComponent = (
+        MenuItemComponent = (
           <SidebarLinkRouter
             to={item.toRoute}
             onClick={toggle}
@@ -178,13 +178,13 @@ const DynamicMenu = ({ urlPathname, mobileView, toggle }) => {
         );
       }
 
-      return menuItemComponent;
+      return MenuItemComponent;
     });
 
     return <SidebarMenu>{MainMenuComponents}</SidebarMenu>;
   };
 
-  const renderMobileMenu = () => {
+  const createMobileMenu = () => {
     if (pathnameState === '/') {
       return renderMobileHomePageMenu();
     } else if (pathnameState === '/signup' || pathnameState === '/login') {
@@ -192,7 +192,7 @@ const DynamicMenu = ({ urlPathname, mobileView, toggle }) => {
     }
   };
 
-  const renderDesktopMenu = () => {
+  const createDesktopMenu = () => {
     if (pathnameState === '/') {
       return renderDesktopHomePageMenu();
     } else if (pathnameState === '/signup' || pathnameState === '/login') {
@@ -202,7 +202,40 @@ const DynamicMenu = ({ urlPathname, mobileView, toggle }) => {
 
   console.log('the urls pathname is ' + pathnameState);
 
-  return <>{mobileView ? renderMobileMenu() : renderDesktopMenu()}</>;
+  // ^ Expansion section for App browser
+
+  const renderAppMenuDesktop = () => {
+    const AppMenuComponents = appMenuData.map((item) => {
+      let MenuItemComponent;
+      MenuItemComponent = (
+        <DesktopLinkRouter to={item.toRoute}>{item.name}</DesktopLinkRouter>
+      );
+      return MenuItemComponent;
+    });
+    return <NavMenu>{AppMenuComponents}</NavMenu>;
+  };
+
+  let finalMenu;
+
+  switch (pathnameState) {
+    case '/':
+    case '/login':
+    case '/signup':
+      finalMenu = <>{mobileView ? createMobileMenu() : createDesktopMenu()}</>;
+      break;
+
+    case '/app-gallery':
+    case '/form-template':
+      finalMenu = (
+        <>{mobileView ? console.log('hello') : renderAppMenuDesktop()}</>
+      );
+      break;
+    default:
+      finalMenu = <NavMenu>No Menu Content</NavMenu>;
+      break;
+  }
+
+  return finalMenu;
 };
 
 export default DynamicMenu;

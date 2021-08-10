@@ -7,6 +7,8 @@ import Sidebar from './components/Sidebar';
 import Home from './routes/';
 import LoginPage from './routes/LoginPage';
 import SignUpPage from './routes/SignUpPage';
+import FormTemplatePage from './routes/FormTemplatePage';
+import AppGalleryPage from './routes/AppGalleryPage';
 
 function App() {
   // const { pathname, hash } = useLocation();
@@ -29,6 +31,8 @@ function App() {
         <Route path="/" component={Home} exact />
         <Route path="/login" component={LoginPage} />
         <Route path="/signup" component={SignUpPage} />
+        <Route path="/app-gallery" component={AppGalleryPage} />
+        <Route path="/form-template" component={FormTemplatePage} />
       </Switch>
     </Router>
   );

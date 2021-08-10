@@ -119,3 +119,20 @@ export const mainMenuData = [
     linkStyle: 'btn-green-router',
   },
 ];
+
+export const appMenuData = [
+  {
+    id: 'appGallery',
+    name: 'Apps',
+    toScroll: '',
+    toRoute: '/app-gallery',
+    linkStyle: 'app-link-green',
+  },
+  {
+    id: 'form',
+    name: 'Form',
+    toScroll: '',
+    toRoute: '/form-template',
+    linkStyle: 'app-link-green',
+  },
+];
