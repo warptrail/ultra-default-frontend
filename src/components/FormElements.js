@@ -1,19 +1,39 @@
 import styled from 'styled-components';
+import TruckBackgroundImage from '../images/truck-pexels.jpg';
+
+export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  background-image: url(${TruckBackgroundImage});
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+`;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   background: #151615;
-  height: 90vh;
-  width: 90%;
-  margin: auto;
+
+  width: 100vw;
+  max-width: 800px;
+  /* border: 1px solid blue; */
+  margin: 0 auto;
+  padding-bottom: 40px;
 `;
 
 export const FormH1 = styled.h1`
-  font-size: 25px;
-  color: plum;
+  font-size: 33px;
+  color: black;
   text-align: center;
-  margin-top: 24px;
+  margin-top: 100px;
+  margin-bottom: 34px;
 `;
 
 export const Fieldset = styled.fieldset`
@@ -28,20 +48,31 @@ export const InputBox = styled.div`
   flex-direction: column;
   /* background-color: black; */
   /* text-align: center; */
-  width: 80%;
+  /* width: 80%; */
   margin: 0 auto;
   margin-top: ${({ extraMargin }) => (extraMargin ? '50px' : '0px')};
-  padding: 20px;
+  max-width: 500px;
+  /* padding: 20px; */
+  /* border: 1px solid red; */
 `;
 export const Label = styled.label`
   font-size: 22px;
   margin-bottom: 15px;
+  margin: 9px;
+`;
+
+export const InputGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 50px 10%;
+  /* border: 1px solid yellow; */
 `;
 
 export const TextInput = styled.input`
   height: 2.5em;
   padding: 0 4px;
-  max-width: 300px;
+  margin: 15px;
+
   background-color: #282a28;
   color: #fff;
   font-size: 18px;

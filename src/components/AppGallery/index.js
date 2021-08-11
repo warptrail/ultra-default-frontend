@@ -25,7 +25,7 @@ const AppGallery = () => {
         </AppGalleryCardLink>
         <AppGalleryCardLink>
           <AppGalleryCard to="#">
-            <AGCardH2>No App Yet</AGCardH2>
+            <AGCardH2>No App</AGCardH2>
             <AGCardIcon2 />
             <AGCardText>No App Exists Yet</AGCardText>
           </AppGalleryCard>

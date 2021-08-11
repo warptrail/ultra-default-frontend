@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
 import {
-  Fieldset,
+  FormContainer,
   Form,
+  Fieldset,
   FormH1,
   InputBox,
+  InputGroup,
   Label,
   TextInput,
   SubmitButton,
@@ -12,28 +14,32 @@ import {
 
 const FormTemplate = () => {
   return (
-    <Form>
+    <FormContainer>
       <FormH1>Standard Input Form</FormH1>
-      <Fieldset>
-        <InputBox extraMargin={true}>
-          <Label htmlFor="nameInput">Name</Label>
-          <TextInput id="nameInput" type="text"></TextInput>
-        </InputBox>
-        <InputBox>
-          <Label htmlFor="titleInput">Title</Label>
-          <TextInput id="" titleInput="text"></TextInput>
-        </InputBox>
-        <InputBox>
-          <Label htmlFor="factionInput">Faction</Label>
-          <TextInput id="factionInput" type="text"></TextInput>
-        </InputBox>
-        <InputBox>
-          <Label htmlFor="levelInput">Level</Label>
-          <TextInput id="levelInput" type="text"></TextInput>
-        </InputBox>
-      </Fieldset>
-      <SubmitButton type="submit" value="submit" />
-    </Form>
+      <Form autoComplete="off">
+        <InputGroup>
+          <Fieldset>
+            <InputBox>
+              <Label htmlFor="nameInput">Name</Label>
+              <TextInput id="nameInput" type="text"></TextInput>
+            </InputBox>
+            <InputBox>
+              <Label htmlFor="titleInput">Title</Label>
+              <TextInput id="" titleInput="text"></TextInput>
+            </InputBox>
+            <InputBox>
+              <Label htmlFor="factionInput">Faction</Label>
+              <TextInput id="factionInput" type="text"></TextInput>
+            </InputBox>
+            <InputBox>
+              <Label htmlFor="levelInput">Level</Label>
+              <TextInput id="levelInput" type="text"></TextInput>
+            </InputBox>
+          </Fieldset>
+        </InputGroup>
+        <SubmitButton type="submit" value="submit" />
+      </Form>
+    </FormContainer>
   );
 };
 

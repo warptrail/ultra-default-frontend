@@ -1,10 +1,23 @@
 import styled from 'styled-components';
 import { Link as LinkRouter } from 'react-router-dom';
-import { Link as LinkScroll } from 'react-scroll';
+
+const colorChange = (scrollNav, isFormPage) => {
+  if (!isFormPage) {
+    if (scrollNav) {
+      return '#000';
+    } else {
+      return 'transparent';
+    }
+  } else {
+    return '#000';
+  }
+};
 
 export const Nav = styled.nav`
   color: #fff;
-  background: ${({ scrollNav }) => (scrollNav ? '#000' : 'transparent')};
+  background: ${({ scrollNav, isFormPage }) => {
+    return colorChange(scrollNav, isFormPage);
+  }};
   height: 80px;
   margin-top: ${({ isHomePage }) => (isHomePage ? '-80px' : '0px')};
   display: flex;

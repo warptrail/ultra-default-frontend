@@ -37,7 +37,11 @@ const Navbar = ({ toggle }) => {
 
   return (
     <>
-      <Nav scrollNav={scrollNav} isHomePage={currentURL.pathname === '/'}>
+      <Nav
+        scrollNav={scrollNav}
+        isHomePage={currentURL.pathname === '/'}
+        isFormPage={currentURL.pathname === '/form-template'}
+      >
         <NavbarContainer>
           <NavLogo to="/" onClick={toggleHome}>
             <NavLogoText>warptrail</NavLogoText>
